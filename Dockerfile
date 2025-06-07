@@ -16,7 +16,6 @@ ENV GDAL_DATA=/usr/share/gdal
 ENV PROJ_LIB=/usr/share/proj
 
 RUN echo "Listing all folders in /usr/share:" && ls -l /usr/share | grep '^d'
-RUN echo "Listing all folders in /usr/share/gdal:" && ls -l /usr/share/gdal | grep '^d'
 
 
 
