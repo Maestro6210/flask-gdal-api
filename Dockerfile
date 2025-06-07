@@ -14,10 +14,10 @@ ENV C_INCLUDE_PATH=/usr/include/gdal
 ENV GDAL_VERSION=3.4.3
 ENV GDAL_DATA=/usr/share/gdal/3.4
 ENV PROJ_LIB=/usr/share/proj
+
 RUN echo "Listing all folders in /usr:" && ls -l /usr | grep '^d'
 
 
-RUN echo "Listing GDAL data dirs:" && ls -ld /usr/share/gdal* /usr/share/gdal/* || true
 
 RUN echo "Checking GDAL paths..." && \
     [ -d "$CPLUS_INCLUDE_PATH" ] || (echo "Missing $CPLUS_INCLUDE_PATH" >&2 && exit 1) && \
