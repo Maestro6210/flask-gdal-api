@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: flask-gdal-api
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python server.py"
+    region: oregon
+    plan: free
+    build:
+      packages:
+        - gdal-bin
+        - python3-gdal
