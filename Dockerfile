@@ -13,9 +13,8 @@ ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
 
 # Install numpy first, then GDAL and others
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel
-RUN pip install --no-cache-dir numpy
-RUN pip install --no-cache-dir Flask flask-cors GDAL==3.4.3
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel numpy Flask flask-cors GDAL==3.4.3
+
 
 # Copy your app and rest of Dockerfile...
 COPY . /app
