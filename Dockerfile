@@ -35,6 +35,6 @@ RUN pip install --no-cache-dir numpy==1.26.4
 
 # Then install Flask and GDAL
 RUN pip install --no-cache-dir Flask flask-cors
-RUN pip install --no-cache-dir GDAL==3.4.3
+RUN pip install --no-cache-dir GDAL==2.2.3
 
 CMD ["python", "server.py"]
