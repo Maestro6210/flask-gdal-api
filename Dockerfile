@@ -2,9 +2,9 @@ FROM python:3.11-slim
 
 # Install system packages needed to build GDAL
 RUN apt-get update && apt-get install -y \
-    build-essential \
     gdal-bin \
     libgdal-dev \
+    build-essential \
     python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
