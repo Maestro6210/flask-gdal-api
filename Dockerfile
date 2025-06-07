@@ -25,7 +25,7 @@ COPY . .
 RUN pip install --upgrade pip setuptools wheel
 
 # Install numpy first to avoid dependency issues
-RUN pip install --no-cache-dir numpy
+RUN pip install --no-cache-dir numpy==1.26.4
 
 # Then install GDAL and other deps
 RUN pip install --no-cache-dir Flask flask-cors
