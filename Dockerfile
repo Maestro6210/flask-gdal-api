@@ -16,6 +16,13 @@ RUN apt-get update && apt-get install -y \
 
 ENV GDAL_VERSION=3.5.0
 
+pip install --force-reinstall GDAL==3.5.0
+rm -rf /usr/local/bin/gdal* /usr/local/lib/libgdal* /usr/local/include/gdal /usr/local/share/gdal
+ldconfig
+RUN pip install --force-reinstall numpy
+
+
+
 # Download and build GDAL from source
 RUN wget https://github.com/OSGeo/gdal/releases/download/v3.5.0/gdal-3.5.0.tar.gz \
     && tar -xzf gdal-${GDAL_VERSION}.tar.gz \
@@ -33,10 +40,10 @@ ENV C_INCLUDE_PATH=/usr/local/include
 
 RUN pip install --upgrade pip setuptools wheel
 
-RUN pip install --no-cache-dir numpy
 
 # Install Python packages, including GDAL Python bindings matching system GDAL
-RUN pip install --no-cache-dir GDAL==${GDAL_VERSION} Flask flask-cors
+RUN pip install --no-cache-dir GDAL==3.5.0 Flask flask-cors
+
 
 COPY . /app
 WORKDIR /app
