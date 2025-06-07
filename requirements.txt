@@ -1,3 +1,4 @@
 Flask
 flask-cors
 numpy
+GDAL==3.6.0
