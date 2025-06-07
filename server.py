@@ -9,7 +9,9 @@ import traceback
 
 app = Flask(__name__)
 CORS(app)  # <-- Enable CORS for all routes and origins
-
+@app.route('/')
+def home():
+    return 'It works!'
 @app.route('/create_tif', methods=['POST'])
 def create_tif():
     try:
