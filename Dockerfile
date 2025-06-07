@@ -17,8 +17,9 @@ COPY requirements.txt .
 # Install numpy first
 RUN pip install --no-cache-dir numpy
 
-# Then install other requirements except numpy (filter numpy out)
-RUN pip install --no-cache-dir -r <(grep -v numpy requirements.txt)
+# Create a temp requirements file without numpy, then install it
+RUN grep -v "^numpy" requirements.txt > requirements_no_numpy.txt \
+ && pip install --no-cache-dir -r requirements_no_numpy.txt
 
 COPY . /app
 WORKDIR /app
