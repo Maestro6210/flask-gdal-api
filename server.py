@@ -9,9 +9,11 @@ import traceback
 
 app = Flask(__name__)
 CORS(app)  # <-- Enable CORS for all routes and origins
+
 @app.route('/')
 def home():
     return 'It works!'
+
 @app.route('/create_tif', methods=['POST'])
 def create_tif():
     try:
@@ -75,4 +77,5 @@ def create_tif():
         return abort(500, f"Server error: {str(e)}")
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=5000, debug=True)
+
