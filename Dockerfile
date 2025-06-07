@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 # Tell pip where to find GDAL
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
-ENV GDAL_VERSION=3.4.3  # optional pin version
+ENV GDAL_VERSION=3.4.3 
 
 COPY requirements.txt .
 
