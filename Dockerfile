@@ -17,8 +17,7 @@ RUN apt-get update && apt-get install -y \
 ENV GDAL_VERSION=3.5.0
 
 RUN pip install --force-reinstall GDAL==3.5.0
-RUN rm -rf /usr/local/bin/gdal* /usr/local/lib/libgdal* /usr/local/include/gdal /usr/local/share/gdal
-ldconfig
+RUN rm -rf /usr/local/bin/gdal* /usr/local/lib/libgdal* /usr/local/include/gdal /usr/local/share/gdal ldconfig
 RUN pip install --force-reinstall numpy
 
 
