@@ -13,6 +13,12 @@ ENV GDAL_VERSION=3.4.3
 ENV GDAL_DATA=/usr/share/gdal/3.4
 ENV PROJ_LIB=/usr/share/proj
 
+RUN echo "Checking GDAL paths..." && \
+    ls -ld $CPLUS_INCLUDE_PATH || echo "Missing $CPLUS_INCLUDE_PATH" && \
+    ls -ld $C_INCLUDE_PATH || echo "Missing $C_INCLUDE_PATH" && \
+    ls -ld $GDAL_DATA || echo "Missing $GDAL_DATA" && \
+    ls -ld $PROJ_LIB || echo "Missing $PROJ_LIB"
+
 WORKDIR /app
 COPY . .
 
