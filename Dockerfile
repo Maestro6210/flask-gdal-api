@@ -15,6 +15,7 @@ ENV GDAL_VERSION=3.4.3
 
 # Copy requirements and install
 COPY requirements.txt .
+COPY wheels/ ./wheels/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the app
