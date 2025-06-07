@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 ENV GDAL_VERSION=3.11.0
 
 # Download and build GDAL from source
-RUN wget https://github.com/OSGeo/gdal/releases/download/v${GDAL_VERSION}/gdal-${GDAL_VERSION}.tar.gz \
+RUN wget https://github.com/OSGeo/gdal/releases/download/v3.11.0/gdal-3.11.0.tar.gz \
     && tar -xzf gdal-${GDAL_VERSION}.tar.gz \
     && cd gdal-${GDAL_VERSION} \
     && ./configure --with-python=python3 \
