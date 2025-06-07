@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
 ENV GDAL_VERSION=3.4.3
-ENV GDAL_DATA=/usr/share/gdal/3.4
+ENV GDAL_DATA=/usr/share/gdal
 ENV PROJ_LIB=/usr/share/proj
 
 RUN echo "Listing all folders in /usr/share:" && ls -l /usr/share | grep '^d'
