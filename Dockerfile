@@ -11,6 +11,9 @@ RUN apt-get update && apt-get install -y \
 # Set GDAL environment variables for pip to find headers
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
+ENV GDAL_VERSION=3.4.3
+ENV GDAL_DATA=/usr/share/gdal/3.4
+ENV PROJ_LIB=/usr/share/proj
 
 # Install numpy first, then GDAL and others
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel numpy Flask flask-cors GDAL==3.4.3
