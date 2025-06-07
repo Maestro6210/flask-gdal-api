@@ -12,18 +12,13 @@ RUN apt-get update && apt-get install -y \
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
 ENV GDAL_VERSION=3.4.3
-ENV GDAL_DATA=/usr/share/gdal
-ENV PROJ_LIB=/usr/share/proj
+
 
 RUN echo "Listing all folders in /usr/share:" && ls -l /usr/share | grep '^d'
 
 
 
-RUN echo "Checking GDAL paths..." && \
-    [ -d "$CPLUS_INCLUDE_PATH" ] || (echo "Missing $CPLUS_INCLUDE_PATH" >&2 && exit 1) && \
-    [ -d "$C_INCLUDE_PATH" ] || (echo "Missing $C_INCLUDE_PATH" >&2 && exit 1) && \
-    [ -d "$GDAL_DATA" ] || (echo "Missing $GDAL_DATA" >&2 && exit 1) && \
-    [ -d "$PROJ_LIB" ] || (echo "Missing $PROJ_LIB" >&2 && exit 1)
+
 
 WORKDIR /app
 COPY . .
